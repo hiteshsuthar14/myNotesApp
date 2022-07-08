@@ -38,7 +38,7 @@ struct ContentView: View {
                     }
                     .onDelete(perform: deleteItem)
                 }
-                .navigationTitle("Notes").foregroundColor(.white)
+                .navigationTitle("Notes")
                 .toolbar {
                     Button() {
                         showingSheet.toggle()
@@ -53,7 +53,7 @@ struct ContentView: View {
             }
             .padding()
             .frame(maxWidth: .infinity , maxHeight: .infinity)
-            .background(.black)
+//            .background(.black)
         }
     }
     func deleteItem(at offsets: IndexSet) {

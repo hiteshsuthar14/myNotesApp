@@ -11,6 +11,7 @@ struct EditView: View {
     @Environment (\.managedObjectContext) var moc
     @State private var showDeleteSheet : Bool = false
     let task : TaskDetails
+    
     var body: some View {
         ScrollView() {
             VStack {
