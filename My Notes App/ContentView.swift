@@ -11,32 +11,48 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var tasks: FetchedResults <TaskDetails>
     @State private var showingSheet = false
-    @State private var showActionSheet: Bool = false
-    let columns = [GridItem(.adaptive(minimum: 150))] //add item if 150 points availabe on screen
+    let columns = [GridItem(.adaptive(minimum: 120))] //add item if 150 points availabe on screen
     
     var body: some View {
         NavigationView {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: columns, spacing: 20 ) {
                     ForEach(tasks) { task in
                         NavigationLink {
                             EditView(task: task)
                         }
                         label : {
-                            VStack(alignment: .leading) {
-                                Text(task.title ?? "Unnamed task")
-                                    .font(.title)
-                                Text(task.date ?? "")
+                            LazyVStack (alignment: .leading){
+                                Text(task.title ?? "unknown")
+                                    .font(.title2)
+//                                    .opacity(0.9)
+//                                    .padding([.horizontal, .vertical], 12)
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 3)
+                                    .multilineTextAlignment(.leading)
+                                    .lineLimit(4)
+                                    .frame(width: 150, height: 120, alignment: .topLeading)
                                     
+                                Text(dateFormatter().string(from: task.date ?? Date()))
+                                    .font(.system(size: 18))
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 3)
+//                                    .padding([.horizontal, .vertical], )
+                                    .foregroundColor(Color("Gray"))
                             }
-                            .frame(minWidth: 150, minHeight : 150, maxHeight: 300)
-                            .padding(10)
-                            .background(.blue)
-                            .foregroundColor(.white)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
+//                            .onAppear{
+//                                changeColor()
+//                            }
+                            .frame(minWidth: 150, minHeight : 150, maxHeight: 150)
+                            .padding(12)
+                            .foregroundColor(Color("Black"))
+                            .onAppear()
+                            .background(tileColors[changeColor()])
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            
                         }
                     }
-                    .onDelete(perform: deleteItem)
+//                  .onDelete(perform: deleteItem)
                 }
                 .navigationTitle("Notes")
                 .toolbar {
@@ -52,17 +68,13 @@ struct ContentView: View {
                 }
             }
             .padding()
-            .frame(maxWidth: .infinity , maxHeight: .infinity)
-//            .background(.black)
         }
     }
-    func deleteItem(at offsets: IndexSet) {
-        for offset in offsets {
-            let task = tasks[offset]
-            moc.delete(task)
-        }
-        try? moc.save()
-        }
+    func changeColor() -> Int{
+//        color = (colorPointer) % 2
+        colorPointer += 1
+        return colorPointer % 4
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

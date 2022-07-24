@@ -12,22 +12,34 @@
  
  */
 import SwiftUI
+import UIKit
 
 struct AddNoteView: View {
     @Environment (\.managedObjectContext) var moc
     @Environment (\.dismiss) var dismiss
     @State private var title = ""
     @State private var desc = ""
-    @State private var date = ""
-    @State private var dateFormatter = DateFormatter()
+    @State private var date = Date()
     @State private var color = ""
     let colors = [ "Color.red", "Color.green", "Color.blue", "Color.brown" ]
     var body: some View {
         NavigationView { // To add toolbar we need a navigation view
             List {
-                TextField("Note Title", text: $title)
-                TextEditor(text: $desc)
+                ZStack(alignment: .leading) {
+                    if title.isEmpty {
+                        Text("Note Title")
+                    }
+                    TextEditor(text: $title)
+                }
+                
+                ZStack(alignment: .leading) {
+                    if desc.isEmpty {
+                        Text("Enter Description")
+                    }
+                    TextEditor(text: $desc)
+                }
             }
+            .foregroundColor(.gray)
             .navigationTitle("New task")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -36,16 +48,14 @@ struct AddNoteView: View {
                         let NewTaskDetails = TaskDetails(context: moc)
                         NewTaskDetails.title = title
                         NewTaskDetails.desc = desc
-                        
-                        let tempdate = Date()
-                        dateFormatter.dateStyle = .long
-                        NewTaskDetails.date = dateFormatter.string(from: tempdate)
-                        
+                        NewTaskDetails.date = date
                         NewTaskDetails.id = UUID()
                         NewTaskDetails.color = colors.randomElement()
                         
-                        try? moc.save()
-                        dismiss()
+                        if moc.hasChanges {
+                            try? moc.save()
+                            dismiss()
+                        }
                     }
                 }
             }

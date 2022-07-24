@@ -7,25 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3816D9012879A50E00C6DE90 /* ColorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3816D9002879A50E00C6DE90 /* ColorLibrary.swift */; };
+		385E0CCD287824370023D0CA /* AppDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 385E0CCB287824370023D0CA /* AppDataModel.xcdatamodeld */; };
+		38B466EE28796FE50030BF21 /* ContentViewExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B466ED28796FE50030BF21 /* ContentViewExtenstion.swift */; };
 		38B63426287295BC00518763 /* My_Notes_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B63425287295BC00518763 /* My_Notes_AppApp.swift */; };
 		38B63428287295BC00518763 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B63427287295BC00518763 /* ContentView.swift */; };
 		38B6342A287295BE00518763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B63429287295BE00518763 /* Assets.xcassets */; };
 		38B6342D287295BE00518763 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B6342C287295BE00518763 /* Preview Assets.xcassets */; };
 		38B6343428729C2100518763 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6343328729C2100518763 /* DataController.swift */; };
-		38B6343A28729C8D00518763 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38B6343828729C8D00518763 /* DataModel.xcdatamodeld */; };
 		38B6343D2872AA4400518763 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6343C2872AA4400518763 /* AddNoteView.swift */; };
 		38B6343F2873194900518763 /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6343E2873194900518763 /* TempView.swift */; };
 		38B6344128731EB400518763 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B6344028731EB400518763 /* EditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3816D9002879A50E00C6DE90 /* ColorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLibrary.swift; sourceTree = "<group>"; };
+		385E0CCC287824370023D0CA /* AppDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppDataModel.xcdatamodel; sourceTree = "<group>"; };
+		38B466ED28796FE50030BF21 /* ContentViewExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewExtenstion.swift; sourceTree = "<group>"; };
 		38B63422287295BC00518763 /* My Notes App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Notes App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38B63425287295BC00518763 /* My_Notes_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Notes_AppApp.swift; sourceTree = "<group>"; };
 		38B63427287295BC00518763 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		38B63429287295BE00518763 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38B6342C287295BE00518763 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		38B6343328729C2100518763 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		38B6343928729C8D00518763 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		38B6343C2872AA4400518763 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
 		38B6343E2873194900518763 /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
 		38B6344028731EB400518763 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
@@ -45,7 +49,6 @@
 		38B63419287295BC00518763 = {
 			isa = PBXGroup;
 			children = (
-				38B6344028731EB400518763 /* EditView.swift */,
 				38B63424287295BC00518763 /* My Notes App */,
 				38B63423287295BC00518763 /* Products */,
 			);
@@ -63,11 +66,14 @@
 			isa = PBXGroup;
 			children = (
 				38B63425287295BC00518763 /* My_Notes_AppApp.swift */,
-				38B6343C2872AA4400518763 /* AddNoteView.swift */,
+				385E0CCB287824370023D0CA /* AppDataModel.xcdatamodeld */,
 				38B63427287295BC00518763 /* ContentView.swift */,
-				38B6343E2873194900518763 /* TempView.swift */,
+				38B6343C2872AA4400518763 /* AddNoteView.swift */,
+				38B6344028731EB400518763 /* EditView.swift */,
+				38B466ED28796FE50030BF21 /* ContentViewExtenstion.swift */,
 				38B6343328729C2100518763 /* DataController.swift */,
-				38B6343828729C8D00518763 /* DataModel.xcdatamodeld */,
+				38B6343E2873194900518763 /* TempView.swift */,
+				3816D9002879A50E00C6DE90 /* ColorLibrary.swift */,
 				38B63429287295BE00518763 /* Assets.xcassets */,
 				38B6342B287295BE00518763 /* Preview Content */,
 			);
@@ -154,9 +160,11 @@
 			files = (
 				38B6343F2873194900518763 /* TempView.swift in Sources */,
 				38B63428287295BC00518763 /* ContentView.swift in Sources */,
-				38B6343A28729C8D00518763 /* DataModel.xcdatamodeld in Sources */,
 				38B6343428729C2100518763 /* DataController.swift in Sources */,
 				38B6344128731EB400518763 /* EditView.swift in Sources */,
+				385E0CCD287824370023D0CA /* AppDataModel.xcdatamodeld in Sources */,
+				3816D9012879A50E00C6DE90 /* ColorLibrary.swift in Sources */,
+				38B466EE28796FE50030BF21 /* ContentViewExtenstion.swift in Sources */,
 				38B63426287295BC00518763 /* My_Notes_AppApp.swift in Sources */,
 				38B6343D2872AA4400518763 /* AddNoteView.swift in Sources */,
 			);
@@ -359,13 +367,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		38B6343828729C8D00518763 /* DataModel.xcdatamodeld */ = {
+		385E0CCB287824370023D0CA /* AppDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				38B6343928729C8D00518763 /* DataModel.xcdatamodel */,
+				385E0CCC287824370023D0CA /* AppDataModel.xcdatamodel */,
 			);
-			currentVersion = 38B6343928729C8D00518763 /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
+			currentVersion = 385E0CCC287824370023D0CA /* AppDataModel.xcdatamodel */;
+			path = AppDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
