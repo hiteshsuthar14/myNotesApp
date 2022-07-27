@@ -72,8 +72,8 @@
 				38B6344028731EB400518763 /* EditView.swift */,
 				38B466ED28796FE50030BF21 /* ContentViewExtenstion.swift */,
 				38B6343328729C2100518763 /* DataController.swift */,
-				38B6343E2873194900518763 /* TempView.swift */,
 				3816D9002879A50E00C6DE90 /* ColorLibrary.swift */,
+				38B6343E2873194900518763 /* TempView.swift */,
 				38B63429287295BE00518763 /* Assets.xcassets */,
 				38B6342B287295BE00518763 /* Preview Content */,
 			);

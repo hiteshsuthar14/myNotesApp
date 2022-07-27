@@ -23,7 +23,6 @@ struct EditView: View {
             ZStack {
                 TextEditor(text: $newTitle)
                     .font(.largeTitle)
-
             }
             ZStack(alignment: .leading) {
                 if ((newDesc).isEmpty) {

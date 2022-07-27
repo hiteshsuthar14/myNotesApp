@@ -21,7 +21,7 @@ struct AddNoteView: View {
     @State private var desc = ""
     @State private var date = Date()
     @State private var color = ""
-    let colors = [ "Color.red", "Color.green", "Color.blue", "Color.brown" ]
+    let colors = ["Color.red", "Color.green", "Color.blue", "Color.brown"]
     var body: some View {
         NavigationView { // To add toolbar we need a navigation view
             List {
@@ -45,7 +45,7 @@ struct AddNoteView: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
-                        let NewTaskDetails = TaskDetails(context: moc)
+                        let NewTaskDetails = TaskDetails(context: moc) // TaskDetails is class name
                         NewTaskDetails.title = title
                         NewTaskDetails.desc = desc
                         NewTaskDetails.date = date

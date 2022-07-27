@@ -70,8 +70,7 @@ struct ContentView: View {
             .padding()
         }
     }
-    func changeColor() -> Int{
-//        color = (colorPointer) % 2
+    func changeColor() -> Int {
         colorPointer += 1
         return colorPointer % 4
     }
